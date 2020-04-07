@@ -1,0 +1,85 @@
+/* CSS ****** VARIABLES ****** */
+
+:root {
+    --dark-blue: #002fa7;
+    --neon-blue: #0000ff;
+    --dark-gray: #434343;
+}
+
+
+/* ****** BASE CSS  ****** */
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+/* ****** END OF BASE CSS ****** */
+
+/* ****** CUSTOM CSS  ****** */
+
+.force-to-bottom {
+    position:absolute;
+    bottom: 2%;
+    width: 0%;
+}
+
+.page-wrapper {
+    padding: 0;
+    margin: 0;
+    background-image: url("https://data.uncannyvalley.dk/wp-content/uploads/2020/04/forside-billede.jpg");
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.nav-entry {
+    max-height: 200px;
+    min-height: 220px;
+    background-color: white;
+    margin: 0px;
+}
+
+.nav-entry a {
+    font-size: 28px;
+    color: var(--dark-blue);
+    outline: 0;
+    border: 0;
+    text-decoration: none!important;
+    padding: 70px;
+}
+
+.nav-entry a:hover {
+    color: lightgreen;
+}
+
+@media (min-width: 767px) {
+    .nav-entry {
+        max-width: 220px;
+    }
+
+    .force-to-bottom { 
+        width: 80%;
+     }
+}
+
+@media (max-width: 575px) {
+    .nav-entry {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+}
+
+
+
+
+/* ****** END OF CUSTOM CSS ****** */
