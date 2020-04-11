@@ -1,9 +1,11 @@
 /* CSS ****** VARIABLES ****** */
 
 :root {
+    --light-green: #63e963;
     --dark-blue: #002fa7;
     --neon-blue: #0000ff;
     --dark-gray: #434343;
+    --light-gray: #a3a3a3;
 }
 
 
@@ -12,6 +14,7 @@
 html {
     margin: 0;
     padding: 0;
+    background-color: var(--light-gray);
 }
 
 * { 
@@ -20,9 +23,109 @@ html {
     box-sizing: border-box;
  }
 
+ video {
+     outline: 0;
+ }
+
 /* ****** END OF BASE CSS ****** */
 
 /* ****** CUSTOM CSS  ****** */
+
+.drawings-modal img {
+    width: 100%;
+}
+
+.drawing-entry img {
+    max-width: 80px;
+    margin-top: 8px;
+    cursor: zoom-in;
+}
+
+.instagram-icon {
+    font-size: 18px;
+}
+
+.instagram-icon::after {
+    content: url('https://data.uncannyvalley.dk/wp-content/uploads/2020/04/icons8-instagram-20.png');
+}
+
+.no-padding {
+    padding: 0!important;
+}
+
+.logo-img {
+    max-width: 106%!important;
+}
+
+.sunlight-container {
+    position: absolute;
+    top: 0px;
+    left: 22vw;
+    pointer-events: none;
+    max-width: 50vw;
+}
+
+.sunlight-container div {
+        opacity: .7;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #9a90b5;
+        margin: 3em auto;
+        padding: 1em;
+        box-shadow: 0 0 20px #8188ad, 0 0 30px 30px #6188b5;
+}
+
+.gallery-loader{
+    position: absolute;
+    color: var(--neon-blue);
+}
+
+.row {
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+.catalog-modal {
+    color: blue;
+    height: 80vh;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.catalong-btn {
+    background-color: var(--neon-blue);
+    color: white;
+    border: 2px outset;
+    padding: 10px 55px;
+    outline: none!important;
+}
+
+.catalong-btn:hover {
+    background-color: var(--light-green);
+}
+
+.modal-header, .modal-footer, .close, .modal-footer button {
+    border: none!important;
+    color: var(--neon-blue)!important;
+    outline: none!important;
+}  
+
+.img-zoom {
+    z-index: 100;
+    width: 50px;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.loader {
+    color: var(--neon-blue);
+}
+
+.nav-return-to-index {
+    position: absolute;
+    z-index: 10000;
+}
 
 .force-to-bottom {
     position:absolute;
@@ -42,6 +145,31 @@ html {
     display: block;
 }
 
+.page-wrapper-journal {
+    background-color: var(--light-gray);
+    width: 100vw;
+    height: auto;
+}
+
+.page-wrapper-gallery {
+    min-height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+    width: 100vw;
+    background: rgb(16,120,185);
+    /* background: radial-gradient(circle, #1078b9 0%, #02667b 46%, rgba(1,26,22,1) 78%); */
+}
+
+.page-wrapper-videoroom {
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    background: rgb(46, 46, 46);
+    background: radial-gradient(circle, rgb(83, 83, 83) 0%, rgb(0, 15, 13) 78%);
+    
+}
+
 .nav-entry {
     max-height: 200px;
     min-height: 220px;
@@ -59,10 +187,200 @@ html {
 }
 
 .nav-entry a:hover {
-    color: lightgreen;
+    color: var(--light-green);
 }
 
+.journal-entry{
+    width: 100%!important;
+    margin: 30px auto 30px auto;
+}
+
+.journal-entry h1 {
+    font-size: 46px;
+}
+
+.journal-entry p {
+    font-size: 22px;
+}
+
+.journal-entry img {
+    width: 100%;
+}
+
+.journal-entry.decrease {
+    width: auto!important;
+}
+
+.journal-entry.decrease h1 {
+    font-size: 32px!important;
+}
+
+.journal-entry.decrease p {
+    font-size: 18px!important;
+}
+
+.journal-entry.decrease img {
+    width: auto!important;
+}
+
+.journal-entry h1,  .journal-entry p{
+    color: var(--neon-blue);
+    font-family: "Times New Roman", Times, serif;
+}
+
+.journal-entry p::selection {
+    color: var(--light-green);
+    background-color: rgb(238, 238, 238);
+}
+
+.journal-entry h1::selection {
+    color: green;
+    background-color: var(--light-green);
+}
+
+.journal-fixed-nav {
+    pointer-events: none;
+}
+
+.journal-fixed-nav p {
+    pointer-events: all;
+    width: 50px;
+    float: right;
+}
+
+.videoroom-inner {
+    width: 550px;
+    height: 310px;
+    margin: 0 auto;
+    box-shadow: 3px 3px 30px rgba(151, 151, 151, 0.7);  
+}
+
+
+/* 3D PLATFORM  */
+
+.catalog-container {
+    margin-top: auto;
+}
+
+.catalog-container button {
+    margin-right: -2px;
+}
+
+.perspective {
+    perspective: 1100px;
+}
+
+.interactive-platform{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(16, 120, 185);
+    width: 35vw;
+    height:35vw;
+    position: relative;
+    animation: rotate 60s infinite;
+    animation-timing-function: linear;
+    box-shadow: 3px 1px 40px rgba(44, 44, 44, 0.7);
+}
+
+.interactive-platform:after {
+    content: '';
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background-size: 100% 100%;
+}
+
+
+.interactive-platform div:nth-child(1) {
+    /* border: 5px solid green; */
+    position: relative;
+    text-align: center;
+    margin-left: 8%;
+}
+
+.interactive-platform div:nth-child(2) {
+    /* border: 5px solid orange; */
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.speciel{ 
+    max-width: 110px!important;
+    height: auto; 
+    position: relative;
+    animation: elem-rotate 60s infinite;
+    animation-timing-function: linear;
+    filter: drop-shadow(30px 30px 10px rgba(0, 160, 48, 0.3));
+ }
+
+ .speciel:hover {
+    cursor: zoom-in;
+    filter: drop-shadow(30px 30px 10px rgba(255, 122, 222, 0.3));
+ }
+
+ .special-bottom {
+    bottom: 0px;
+    position: absolute;
+ }
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotateX(-40deg) rotateY(-180deg) rotateZ(20deg);
+        -moz-transform: rotate(-40deg) rotateY(-180deg) rotateZ(20deg); 
+        -o-transform: rotate(-40deg) rotateY(-180deg) rotateZ(20deg);
+        transform: rotateX(-40deg) rotateY(-180deg) rotateZ(20deg);
+    }
+
+    100% {
+        -webkit-transform: rotateX(-40deg) rotateY(-180deg) rotateZ(380deg);
+        -moz-transform: rotate(-40deg) rotateY(-180deg) rotateZ(380deg); 
+        -o-transform: rotate(-40deg) rotateY(-180deg) rotateZ(380deg);
+        transform: rotateX(-40deg) rotateY(-180deg) rotateZ(380deg);
+    }
+}
+
+@keyframes elem-rotate {
+    0% {
+        transform: rotateX(0deg) rotateY(180deg) rotateZ(20deg);
+        -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(20deg);
+        -moz-transform: rotate(0deg) rotateY(180deg) rotateZ(20deg); 
+        -o-transform: rotate(0deg) rotateY(180deg) rotateZ(20deg);
+    }
+
+    100% {
+        transform: rotateX(0deg) rotateY(180deg) rotateZ(380deg);
+        -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(380deg);
+        -moz-transform: rotate(0deg) rotateY(180deg) rotateZ(380deg); 
+        -o-transform: rotate(0deg) rotateY(180deg) rotateZ(380deg);
+    }
+}
+
+
+
 @media (min-width: 767px) {
+
+    .drawing-entry {
+        text-align: right!important;
+    }
+
+    .speciel{ 
+        max-width: 140px!important;
+    }
+
+    .videoroom-inner {
+        width: 888px;
+        height: 500px;
+    }
+
+    .journal-entry {
+        width: 600px;
+        margin: 50px auto 50px auto;
+    }
+
     .nav-entry {
         max-width: 220px;
     }
@@ -73,10 +391,44 @@ html {
 }
 
 @media (max-width: 575px) {
-    .nav-entry {
-        margin: 0 auto;
-        max-width: 90%;
+
+
+    .page-wrapper-gallery {
+        min-height: auto;
+        max-height: auto;
+        height: auto;
     }
+
+    .speciel{ 
+        max-width: 85px!important;
+    }
+
+    .interactive-platform{
+        width: 50vw;
+        height: 50vw;
+    }
+
+    .videoroom-inner {
+        width: 480px;
+        height: 260px;
+    }
+
+    @keyframes rotate {
+        0% {
+            -webkit-transform: rotateX(0deg) rotateY(-180deg) rotateZ(20deg);
+            -moz-transform: rotate(0deg) rotateY(-180deg) rotateZ(20deg); 
+            -o-transform: rotate(0deg) rotateY(-180deg) rotateZ(20deg);
+            transform: rotateX(0deg) rotateY(-180deg) rotateZ(20deg);
+        }
+    
+        100% {
+            -webkit-transform: rotateX(0deg) rotateY(-180deg) rotateZ(380deg);
+            -moz-transform: rotate(0deg) rotateY(-180deg) rotateZ(380deg); 
+            -o-transform: rotate(0deg) rotateY(-180deg) rotateZ(380deg);
+            transform: rotateX(0deg) rotateY(-180deg) rotateZ(380deg);
+        }
+    }
+
 }
 
 
